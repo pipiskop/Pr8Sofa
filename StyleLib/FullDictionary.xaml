@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Themes/ButtonStyle.xaml"/>
+        <ResourceDictionary Source="Themes/TextBlockStyle.xaml"/>
+        <ResourceDictionary Source="Themes/TextBoxStyle.xaml"/>
+        <ResourceDictionary Source="Themes/LabelStyle.xaml"/>
+        <ResourceDictionary Source="Themes/DataGridStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,37 @@
+﻿<Window x:Class="LibraryWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#FF5F5F5F">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="0"/>
+            <RowDefinition Height="Auto" MinHeight="54.65"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="9"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Style="{DynamicResource LabelStyle}" Content="Имя:" Grid.Row="1" Margin="5,5,5,5"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="NameTextBox" Grid.Row="1" Margin="67,5,0,14" Width="200" HorizontalAlignment="Left"/>
+
+        <Label Style="{DynamicResource LabelStyle}" Content="Возраст:" Grid.Row="1" Margin="272,5,-262,5"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="AgeTextBox" Grid.Row="1" Margin="343,5,0,14" HorizontalAlignment="Left" Width="173"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="516,6,0,14" Width="234">
+            <Button x:Name="SerializeBtn" Style="{DynamicResource ButtonStyle}" Content="Сериализовать" Click="SerializeBtn_Click" Width="100"/>
+            <Button x:Name="DeserializeBtn" Style="{DynamicResource ButtonStyle}" Content="Десериализовать" Click="DeserializeBtn_Click" Width="100"/>
+        </StackPanel>
+
+        <DataGrid Style="{DynamicResource DataGridStyle}" x:Name="FileGrid" Grid.Row="4" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0,150,0,0" HorizontalAlignment="Center" Width="664" Height="133" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Возраст" Binding="{Binding Age}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Margin="0,41,0,180" Grid.Row="4" TextWrapping="Wrap" HorizontalAlignment="Center" Width="750"><Run Text="ЭТА ПРОГРАММА"/><Run Text=" УГАДЫВАЕТ ВАШЕ ИМЯ И ВАШ ВОЗРАСТ И ЗАПИСЫВАЕТ ИХ В СЕБЯ"/><Run Text=","/><Run Text=" ТРЕБУЕТСЯ ЛИШЬ ОТВЕТИТЬ НА 2 ВОПРОСА"/></TextBlock>
+    </Grid>
+</Window>
